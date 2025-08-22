@@ -1,4 +1,4 @@
-// src/router.js - Mevcut dosyalarla çalışan versiyon
+// src/router.js - Stok route'u güncellenmiş versiyon
 import { createRouter, createWebHistory } from 'vue-router'
 import Dashboard from '@/components/Dashboard.vue'
 
@@ -34,14 +34,7 @@ const routes = [
       {
         path: 'stok',
         name: 'stock.index',
-        component: { 
-          template: `
-            <div style="padding: 24px;">
-              <h1>Stok Listesi</h1>
-              <p>Stok listesi sayfası yakında gelecek...</p>
-            </div>
-          `
-        },
+        component: () => import('@/components/stock/StockList.vue'),
         meta: { menuKey: 'stok-list', title: 'Stok Listesi' }
       },
       {
